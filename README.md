@@ -51,49 +51,6 @@ El proyecto utiliza **dos esquemas de codificación** según el modelo:
 
 ---
 
-## Resultados
-
-### Modelos Base (sin reducción dimensional)
-
-| Modelo | Encoding | Variables | Accuracy Train | Accuracy Test | Parámetros Óptimos |
-|--------|----------|-----------|----------------|---------------|-------------------|
-| Regresión Logística | One-Hot | 117 | 94.58% | 94.58% | η=10.0, 3000 iter |
-| k-NN | One-Hot | 117 | 100% | 100% | k=3 |
-| Random Forest | Label | 22 | 100% | 100% | 200 trees, max_features=10 |
-| SVM | Label | 22 | 100% | 100% | RBF kernel, C=10, γ=0.1 |
-| MLP | One-Hot | 117 | 100% | 100% | (117, 50, 25) - 3 capas |
-
-### Reducción de Dimensionalidad
-
-#### PCA - Reducción Lineal
-
-**k-NN con PCA (One-Hot Encoding):**
-- Original: 117 vars → 100% accuracy
-- PCA 95%: 40 vars (65.8% reducción) → 100% accuracy
-- PCA 99%: 57 vars (51.3% reducción) → 100% accuracy
-
-**Random Forest con PCA (Label Encoding):**
-- Original: 22 vars → 100% accuracy
-- PCA 95%: 10 vars (54.5% reducción) → 99.71% accuracy
-- PCA 99%: 14 vars (36.4% reducción) → 99.63% accuracy
-
-#### UMAP - Reducción No-Lineal
-
-**k-NN con UMAP (One-Hot Encoding):**
-- UMAP 2: 98.36% accuracy (98.3% reducción)
-- UMAP 5: 98.77% accuracy (95.7% reducción)
-- UMAP 10: 98.93% accuracy (91.5% reducción)
-- UMAP 20: 98.85% accuracy (82.9% reducción)
-
-**Random Forest con UMAP (Label Encoding):**
-- UMAP 2: 97.21% accuracy (90.9% reducción)
-- UMAP 5: 97.99% accuracy (77.3% reducción)
-- UMAP 10: 97.83% accuracy (54.5% reducción)
-- UMAP 20: 98.32% accuracy (9.1% reducción)
-
-**Nota:** El dataset UCI Mushroom es perfectamente separable. Los resultados de 100% accuracy están validados con validación cruzada estratificada.
-
----
 
 ## Cómo Ejecutar el Proyecto
 
