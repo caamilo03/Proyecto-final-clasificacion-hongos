@@ -5,6 +5,8 @@
 **Objetivo:** Clasificar hongos como comestibles o venenosos usando 5 modelos de Machine Learning y técnicas de reducción de dimensionalidad
 
 ---
+## Link del vídeo: https://youtu.be/jaczX1fN5Sc
+
 
 ## Descripción del Proyecto
 
